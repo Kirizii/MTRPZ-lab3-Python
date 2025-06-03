@@ -18,7 +18,7 @@ def make_app(settings: Settings) -> FastAPI:
     if settings.debug:
         app.mount('/static', StaticFiles(directory='build'), name='static')
 
-    app.include_router(api.router, prefix='/api', tags=['api'])
+    app.include_router(api.router, prefix='/api', tags=['api']) #Якийсь коментар, для змін
     app.include_router(health.router, prefix='/health', tags=['health'])
 
     @app.get('/', include_in_schema=False, response_class=FileResponse)
