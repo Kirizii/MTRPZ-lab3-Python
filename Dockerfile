@@ -1,6 +1,8 @@
-FROM python:3.12-slim
+FROM python:3.12-alpine
 
 WORKDIR /app
+
+RUN apk add --no-cache build-base gfortran musl-dev
 
 COPY requirements/backend.in .
 
