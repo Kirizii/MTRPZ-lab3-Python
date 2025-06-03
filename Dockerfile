@@ -2,10 +2,12 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY . .
+COPY requirements/backend.in .
 
 RUN pip install --upgrade pip \
-    && pip install -r requirements/backend.in
+    && pip install -r backend.in
+
+COPY . .
 
 EXPOSE 8000
 
